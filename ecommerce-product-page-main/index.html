@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- <script src="https://kit.fontawesome.com/d3116e718b.js" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+  <style>
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="navbar">
+    <div class="navmenu"><a href="index.html"><img src="images/logo.svg" alt="logo"/></a>
+      <div class="submenu">
+      <ul class="listitems">
+        <li><a href="#Collections">Collections</a></li>
+        <li><a href="#Men">Men</a></li>
+        <li><a href="#Women">Women</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Contact">Contact</a></li>
+      </ul>
+    </div>
+    </div>
+    <div class="navitems"><div id="icon-cart" onmouseover="cartMenu()" onmouseout="closeCart()"><a href="#cart"><svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#69707D" fill-rule="nonzero" id="cartImg"/></svg></a></div>
+    <a href="#profile"><img src="images/image-avatar.png" alt="image-avatar" id="avatar" height="30px" /></a></div>
+  </div>
+
+  <div class="section">
+    <div class="gallery">
+      <div class="selected-image"></div>
+      <div class="image-thumbnails" id="thumbnaildiv">
+        <div class="thumbnail product1 activeImg" ></div>
+        <div class="thumbnail product2" ></div>
+        <div class="thumbnail product3" ></div>
+        <div class="thumbnail product4" ></div>
+      </div>
+    </div>
+    <div class="info">
+        <h6 class="details-1 first">Sneaker Company</h6>
+        <h1 class="details-1 second">Fall Limited Edition Sneakers</h1>
+        <h5 class="details-1 third">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</h5>
+    <div class="details-2"><div class="price"><h3>$125.00</h3></div><h6 class="discount">50%</h6></div>
+    <h6 class="old-price details-1">$250.00</h6>
+    <div class="button-div"><div class="quantity"><div class="minus"><img src="images/icon-minus.svg" alt="minus"/></div><div class="num">0</div><div class="plus"><img src="images/icon-plus.svg" alt="plus"/></div></div><button class="cart-button"><img src="images/icons8-cart-48.png" alt="icon-cart" width="17px" />&nbsp; Add to cart</button></div>
+    </div>
+  </div>
+
+
+  <div class="cart-menu" id="cartlist" onmouseover="cartMenu()" onmouseout="closeCart()">
+    <div class="menu-1"><span style="padding-left: 8px;">Cart</span></div>
+    <div class="menu-2">Your cart is empty.</div>
+  </div>
+
+
+  
+</div>
+<div class="lightbox-modal">
+  <div class="gallery-modal">
+    <div class="prev"><svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" id="icon-prev"/></svg></div><div class="next"><svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" id="icon-next"/></svg></div>
+
+    <div class="close-modal"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd" id="close-button"/></svg></div>
+
+    <div class="selected-image-modal"></div>
+    <div class="image-thumbnails-modal">
+      <div class="thumbnail-modal product1-modal activeImage"></div>
+      <div class="thumbnail-modal product2-modal"></div>
+      <div class="thumbnail-modal product3-modal"></div>
+      <div class="thumbnail-modal product4-modal"></div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
