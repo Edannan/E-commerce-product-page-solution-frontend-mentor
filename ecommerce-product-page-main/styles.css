@@ -155,7 +155,7 @@ html{
 }
 
 .activeImg{
-    border: 2px solid hsl(26, 100%, 55%);
+    border: 3px solid hsl(26, 100%, 55%);
     opacity: 0.5;    
 }
 
@@ -312,13 +312,16 @@ html{
 }
 
 .lightbox-modal{
-    display: none;
     position: absolute;
     z-index: 999;
     top: 0;
     width: 100%;
     min-height: 100vh;
     background-color: hsla(0, 0%, 0%, 75%);
+}
+
+.noLightbox{
+    display: none;
 }
 
 .gallery-modal{
@@ -385,12 +388,16 @@ html{
     background-image: url(images/image-product-4-thumbnail.jpg);
 }
 
+.activeModImg{
+    border: 3px solid hsl(26, 100%, 55%);
+    opacity: 70%;
+}
+
 .close-modal{
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 10px 0px;
-    cursor: pointer;
     width: 80%;
 }
 
