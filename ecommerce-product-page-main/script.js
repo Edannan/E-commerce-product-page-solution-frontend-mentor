@@ -32,20 +32,33 @@ for (var i = 0; i < thumbnails.length; i++) {
     });
   }
 
+  //opening the lightbox gallery
   function lightbox(){
     var lightbox = document.getElementById("lightB");
     var modalImage = document.getElementById("modalImage");
     lightbox.classList.remove("noLightbox");
     modalImage.style.backgroundImage = image.style.backgroundImage;
+
+    //make thumbnail of the current image active on opening of lightbox gallery
+    var thumbnails = document.getElementsByClassName("thumbnail");
+    var modalThumbnails = document.getElementsByClassName("thumbnail-modal");
+    var currentImg = document.getElementsByClassName("activeModImg");
+    for(var i = 0; i < thumbnails.length; i++){
+      if(thumbnails[i].classList.contains("activeImg")){
+        currentImg[0].classList.remove("activeModImg");
+        modalThumbnails[i].classList.add("activeModImg");
+      }
+    }
   }
 
+  //close lightbox gallery
   function closeModal(){
     var lightbox = document.getElementById("lightB");
     lightbox.classList.add("noLightbox");
   }
 
 
-  //switching main image at the lightbox
+  //function for switching main image at the lightbox
 function switchModalImg(){
 var modalThumbnails = document.getElementsByClassName("thumbnail-modal");
 var modalImage = document.getElementById("modalImage");
@@ -85,21 +98,67 @@ for (var i = 0; i < modalThumbnails.length; i++) {
       if(modalThumbnails[i].classList.contains("activeModImg") && modalThumbnails[i] != modalThumbnails[0]){
         modalThumbnails[i].classList.remove("activeModImg");
         modalThumbnails[i-1].classList.add("activeModImg");
+        console.log(modalThumbnails[i-1]);
       }
     }
     switchModalImg();
   }
 
-  //fixing error here
+  //switches to the next image
   function next(){
     var modalThumbnails = document.getElementsByClassName("thumbnail-modal");
     var currentImg = document.getElementsByClassName("activeModImg");
     for(var i = 0; i < modalThumbnails.length; i++){
-      if(modalThumbnails[i].classList.contains("activeModImg") && modalThumbnails[i] != (modalThumbnails[3])){
+      if(modalThumbnails[i].classList.contains("activeModImg") && modalThumbnails[i] != modalThumbnails[3]){
         modalThumbnails[i].classList.remove("activeModImg");
-        modalThumbnails[i+1].classList.add("activeModImg");
-        console.log(modalThumbnails[i+1]);
+        modalThumbnails[i+=1].classList.add("activeModImg");
+        // console.log(modalThumbnails[i+1]);
       }
     }
     switchModalImg();
   }
+
+  function add(){
+    var num = document.getElementById("num");
+    var number = parseInt(num.innerHTML);
+    document.getElementById("num").innerHTML = number+=1;
+
+  }
+
+  function subtract(){
+    var num = document.getElementById("num");
+    var number = parseInt(num.innerHTML);
+    if(number == 0){
+      document.getElementById("num").innerHTML = 0;
+    }else{
+    document.getElementById("num").innerHTML = number-=1;
+    }
+  }
+
+  function addToCart(){ 
+    // var sum = 0;
+    var num = document.getElementById("num");
+    var quantity = parseInt(num.innerHTML);
+    var price = parseInt(document.getElementById("figure").innerHTML);
+
+    var total = quantity * price;
+
+    var item = document.getElementById("secondDetail").innerHTML;
+    document.getElementById("itemName").innerHTML = item;
+
+    var cartNum = document.getElementById("cartNum");
+    cartNum.classList.remove("noLightbox");
+    cartNum.innerHTML = quantity;
+    // sum += parseInt(cartNum.innerHTML);
+    // console.log(sum);
+
+
+    document.getElementById("itemQuantity").innerHTML = "$" + price.toFixed(2) + " x " + quantity + " " + "  " + "$" + `<strong>${total.toFixed(2)}</strong>`;
+  }
+
+
+  var sum = 0;
+  var num = document.getElementById("num");
+  var quantity = parseInt(num.innerHTML);
+  sum+=quantity;
+  console.log(sum)

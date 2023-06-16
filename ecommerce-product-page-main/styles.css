@@ -79,10 +79,22 @@ html{
 }
 
 #icon-cart{
+    position: relative;
     display: flex;
     align-items: center;
-    height:50px
+    height:50px;
+}
 
+.cart-num{
+    /* display: none; */
+    position: absolute;
+    top: 20%;
+    right: 0;
+    border-radius: 50%;
+    padding: 1px 4.5px;
+    background-color: hsl(26, 100%, 55%);
+    color: hsl(0, 0%, 100%);
+    font-size: 7px;
 }
 
 .logo{
@@ -222,7 +234,7 @@ html{
     border-radius: 6px;
 }
 
-.cart-button{
+.btn{
     width: 60%;
     color: hsl(0, 0%, 100%);
     background-color:hsl(26, 100%, 55%);
@@ -233,9 +245,13 @@ html{
     transition: all 0.3s ease;
 }
 
-.cart-button:hover{
+.btn:hover{
     background-color: hsl(26, 100%, 63%);
     transform: scale(1.04);
+}
+
+.checkout-button{
+    width: 100%;
 }
 
 .minus{
@@ -304,11 +320,60 @@ html{
 
 .menu-2{
     display: flex;
+    flex-direction: column;
     height: 75%;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     font-weight: 700;
     color: hsl(219, 9%, 45%); 
+}
+
+#cart-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#item{
+    display: flex;
+    justify-content: space-between;
+    height: 29%;
+    border-radius: 2px;
+    font-size: 11px;
+}
+
+.item-pic{
+    background-image: url(images/image-product-1-thumbnail.jpg);
+    background-size: cover;
+    border-radius: 2px;
+    width: 17%
+}
+
+.item-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 71%;
+}
+
+#itemQuantity{
+    font-size: 11px;
+}
+
+/* #itemName{
+    
+} */
+
+#delete{
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
 }
 
 .lightbox-modal{
