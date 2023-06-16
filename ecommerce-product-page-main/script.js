@@ -157,8 +157,20 @@ for (var i = 0; i < modalThumbnails.length; i++) {
 
     document.getElementById("itemQuantity").innerHTML = "$" + price.toFixed(2) + " x " + cartNumDiv.innerHTML;
     document.getElementById("total").innerHTML = "$" + total.toFixed(2);
+
+    //increase width for itemPricing div when quantity is 10 or more
+    if(parseInt(cartNumDiv.innerHTML.length) == 2){
+    document.getElementById("itemPricing").style.width = "74%";
+    console.log(cartNumDiv.innerHTML.length);
+    }else if(parseInt(cartNumDiv.innerHTML.length) > 2){
+      document.getElementById("itemPricing").style.width = "82%";
+    }else{
+      document.getElementById("itemPricing").style.width = "67%";
+    }
+
   }
 
+  //empty cart
   function del(){
     var cartNumDiv = document.getElementById("cartNum");
     cartNumDiv.classList.add("disabled");
