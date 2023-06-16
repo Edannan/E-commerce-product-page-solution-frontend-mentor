@@ -36,7 +36,7 @@ for (var i = 0; i < thumbnails.length; i++) {
   function lightbox(){
     var lightbox = document.getElementById("lightB");
     var modalImage = document.getElementById("modalImage");
-    lightbox.classList.remove("noLightbox");
+    lightbox.classList.remove("disabled");
     modalImage.style.backgroundImage = image.style.backgroundImage;
 
     //make thumbnail of the current image active on opening of lightbox gallery
@@ -54,7 +54,7 @@ for (var i = 0; i < thumbnails.length; i++) {
   //close lightbox gallery
   function closeModal(){
     var lightbox = document.getElementById("lightB");
-    lightbox.classList.add("noLightbox");
+    lightbox.classList.add("disabled");
   }
 
 
@@ -135,30 +135,34 @@ for (var i = 0; i < modalThumbnails.length; i++) {
     }
   }
 
-  function addToCart(){ 
-    // var sum = 0;
+  function addToCart(){
     var num = document.getElementById("num");
     var quantity = parseInt(num.innerHTML);
     var price = parseInt(document.getElementById("figure").innerHTML);
 
-    var total = quantity * price;
-
     var item = document.getElementById("secondDetail").innerHTML;
     document.getElementById("itemName").innerHTML = item;
 
-    var cartNum = document.getElementById("cartNum");
-    cartNum.classList.remove("noLightbox");
-    cartNum.innerHTML = quantity;
-    // sum += parseInt(cartNum.innerHTML);
-    // console.log(sum);
+    var cartNumDiv = document.getElementById("cartNum");
+    if(quantity != 0){
+    document.getElementById("cart-details").style.display = "flex";
+    document.getElementById("text").classList.add("disabled");
+    cartNumDiv.classList.remove("disabled");
+    }
+    cartNumDiv.innerHTML = parseInt(cartNumDiv.innerHTML) + quantity;
 
+    var total = parseInt(cartNumDiv.innerHTML) * price;
 
-    document.getElementById("itemQuantity").innerHTML = "$" + price.toFixed(2) + " x " + quantity + " " + "  " + "$" + `<strong>${total.toFixed(2)}</strong>`;
+    document.getElementById("itemPic").style.backgroundImage = "url('images/image-product-1-thumbnail.jpg')";
+
+    document.getElementById("itemQuantity").innerHTML = "$" + price.toFixed(2) + " x " + cartNumDiv.innerHTML;
+    document.getElementById("total").innerHTML = "$" + total.toFixed(2);
   }
 
-
-  var sum = 0;
-  var num = document.getElementById("num");
-  var quantity = parseInt(num.innerHTML);
-  sum+=quantity;
-  console.log(sum)
+  function del(){
+    var cartNumDiv = document.getElementById("cartNum");
+    cartNumDiv.classList.add("disabled");
+    cartNumDiv.innerHTML = 0;
+    document.getElementById("cart-details").style.display = "none";
+    document.getElementById("text").classList.remove("disabled");
+  }

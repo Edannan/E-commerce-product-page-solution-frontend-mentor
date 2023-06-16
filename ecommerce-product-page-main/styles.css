@@ -90,8 +90,8 @@ html{
     position: absolute;
     top: 20%;
     right: 0;
-    border-radius: 50%;
-    padding: 1px 4.5px;
+    border-radius: 45%;
+    padding: 0.5px 4px;
     background-color: hsl(26, 100%, 55%);
     color: hsl(0, 0%, 100%);
     font-size: 7px;
@@ -114,7 +114,7 @@ html{
 }
 
 #cartImg:hover{
-    fill: hsl(219, 9%, 45%);
+    fill: hsl(220, 13%, 13%);
 }
 
 .section{
@@ -238,6 +238,7 @@ html{
     width: 60%;
     color: hsl(0, 0%, 100%);
     background-color:hsl(26, 100%, 55%);
+    text-align: center;
     border-radius: 7px;
     padding: 12px 0px;
     border: none;
@@ -321,15 +322,15 @@ html{
 .menu-2{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 75%;
-    /* align-items: center;
-    justify-content: center; */
     font-weight: 700;
     color: hsl(219, 9%, 45%); 
 }
 
 #cart-details{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-evenly;
     height: 100%;
@@ -347,7 +348,7 @@ html{
 }
 
 .item-pic{
-    background-image: url(images/image-product-1-thumbnail.jpg);
+    /* background-image: url(images/image-product-1-thumbnail.jpg); */
     background-size: cover;
     border-radius: 2px;
     width: 17%
@@ -358,15 +359,20 @@ html{
     flex-direction: column;
     justify-content: space-between;
     width: 71%;
+    font-weight: normal;
 }
 
-#itemQuantity{
+#itemPricing{
+    display: flex;
+    justify-content: space-between;
+    width: 67%;
     font-size: 11px;
 }
 
-/* #itemName{
-    
-} */
+#total{
+    color: black;
+    font-weight: 700;
+}
 
 #delete{
     width: 5%;
@@ -385,7 +391,7 @@ html{
     background-color: hsla(0, 0%, 0%, 75%);
 }
 
-.noLightbox{
+.disabled{
     display: none;
 }
 
