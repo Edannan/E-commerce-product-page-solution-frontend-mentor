@@ -98,7 +98,7 @@ for (var i = 0; i < modalThumbnails.length; i++) {
       if(modalThumbnails[i].classList.contains("activeModImg") && modalThumbnails[i] != modalThumbnails[0]){
         modalThumbnails[i].classList.remove("activeModImg");
         modalThumbnails[i-1].classList.add("activeModImg");
-        console.log(modalThumbnails[i-1]);
+        // console.log(modalThumbnails[i-1]);
       }
     }
     switchModalImg();
@@ -177,4 +177,45 @@ for (var i = 0; i < modalThumbnails.length; i++) {
     cartNumDiv.innerHTML = 0;
     document.getElementById("cart-details").style.display = "none";
     document.getElementById("text").classList.remove("disabled");
+  }
+  
+  
+  if(window.innerWidth <= 799){
+    //disabling lightbox gallery on mobile
+    document.getElementById("productImage").removeAttribute("onclick");
+
+    //next and previous buttons on mobile
+    var image = document.getElementById("productImage"); 
+    var mobileprev = document.getElementById("mobilePrev");
+    var mobilenext = document.getElementById("mobileNext");
+
+    var imageArray = ['url("images/image-product-1.jpg")', 'url("images/image-product-2.jpg")', 'url("images/image-product-3.jpg")', 'url("images/image-product-4.jpg")'];
+
+    image.style.backgroundImage = imageArray[0];
+
+    mobileprev.addEventListener("click", function(){
+      if(image.style.backgroundImage == imageArray[0]){
+        image.style.backgroundImage = imageArray[3];
+      }else if(image.style.backgroundImage == imageArray[3]){
+        image.style.backgroundImage = imageArray[2];
+      }else if(image.style.backgroundImage == imageArray[2]){
+        image.style.backgroundImage = imageArray[1];
+      }else{
+        image.style.backgroundImage = imageArray[0];
+      }
+    })
+
+    mobilenext.addEventListener("click", function(){
+      if(image.style.backgroundImage == imageArray[3]){
+        image.style.backgroundImage = imageArray[0];
+      }else if(image.style.backgroundImage == imageArray[0]){
+        image.style.backgroundImage = imageArray[1];
+      }else if(image.style.backgroundImage == imageArray[1]){
+        image.style.backgroundImage = imageArray[2];
+      }else{
+        image.style.backgroundImage = imageArray[3];
+      }
+    })
+    
+
   }

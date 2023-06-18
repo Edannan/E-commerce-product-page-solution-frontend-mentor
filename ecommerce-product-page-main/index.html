@@ -14,7 +14,7 @@
 <body>
 <div class="container">
   <div class="navbar">
-    <div class="navmenu"><a href="index.html"><img src="images/logo.svg" alt="logo"/></a>
+    <div class="navmenu"><div class="side-menu-button" id="sideButton"><svg width="16" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fill-rule="evenodd"/></svg></div><a href="index.html"><img src="images/logo.svg" alt="logo"/></a>
       <div class="submenu">
       <ul class="listitems">
         <li><a href="#Collections">Collections</a></li>
@@ -31,7 +31,7 @@
 
   <div class="section">
     <div class="gallery">
-      <div class="selected-image" id="productImage" onclick="lightbox()"></div>
+      <div class="selected-image" id="productImage" onclick="lightbox()"><div class="mobile-prev" id="mobilePrev"><svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" id="icon-prev"/></svg></div><div class="mobile-next" id="mobileNext"><svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" id="icon-next"/></svg></div></div>
       <div class="image-thumbnails" id="thumbnaildiv">
         <div class="thumbnail product1 activeImg" ></div>
         <div class="thumbnail product2" ></div>
@@ -43,8 +43,8 @@
         <h6 class="details-1 first">Sneaker Company</h6>
         <h1 class="details-1 second" id="secondDetail">Fall Limited Edition Sneakers</h1>
         <h5 class="details-1 third">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</h5>
-    <div class="details-2"><div class="price"><h3>$<span id="figure">125.00</span></h3></div><h6 class="discount">50%</h6></div>
-    <h6 class="old-price details-1">$250.00</h6>
+    <div class="details2-div"><div class="details-2"><div class="price"><h3>$<span id="figure">125.00</span></h3></div><h6 class="discount">50%</h6></div><h6 class="old-price details-1">$250.00</h6></div>
+    
     <div class="button-div"><div class="quantity"><div class="minus" id="minus" onclick="subtract()"><img src="images/icon-minus.svg" alt="minus"/></div><div class="num" id="num">0</div><div class="plus" id="plus" onclick="add()"><img src="images/icon-plus.svg" alt="plus"/></div></div><button class="cart-button btn" onclick="addToCart()"><img src="images/icons8-cart-48.png" alt="icon-cart" width="17px" />&nbsp; Add to cart</button></div>
     </div>
   </div>
@@ -62,14 +62,14 @@
           </div>
           <div class="delete" id="delete" onclick="del()"><img src="images/icon-delete.svg" alt="icon-delete" width="10px" /></div>
         </div>
-      <a href="#cart" class="checkout-button btn" >Checkout</a>
+      <a href="#cart" class="checkout-button btn">Checkout</a>
     </div>
       <div class="text" id="text">Your cart is empty.</div>
     </div>
   </div>
 
 
-  
+  <div class="side-nav"></div>
 </div>
 <div class="lightbox-modal disabled" id="lightB">
   <div class="gallery-modal">
