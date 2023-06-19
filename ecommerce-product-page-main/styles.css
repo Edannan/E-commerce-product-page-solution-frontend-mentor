@@ -607,6 +607,7 @@ html{
         height: 45px;
         left: 15px;
         top: 170px;
+        z-index: 9999;
     }
     
     .mobile-next{
@@ -622,6 +623,7 @@ html{
         height: 45px;
         right: 15px;
         top: 170px;
+        z-index: 9999;
     }
 
     .info{
@@ -687,6 +689,30 @@ html{
         border-radius: 10px;
         padding: 17px 0px;
 
+    }
+
+    .lightbox-modal{
+        display: none;
+    }
+
+    .cart-menu{
+        border-radius: 5px;
+        z-index: 999999;
+        font-size: 20px;
+        height: 300px;
+        top: 75px;
+        right: 10px;
+        width: 95%;
+    }
+
+    #item{
+        height: 29%;
+        border-radius: 2px;
+        font-size: 16px;
+    }
+
+    #itemPricing{
+        font-size: 16px;
     }
 
 
