@@ -533,6 +533,7 @@ html{
     stroke: hsl(26, 100%, 55%);
 }
 
+
 /********************************************* media query *********************************************/
 
 @media (max-width: 799px){
@@ -706,13 +707,73 @@ html{
     }
 
     #item{
-        height: 29%;
-        border-radius: 2px;
+        height: 23%;
+        border-radius: 5px;
         font-size: 16px;
     }
 
     #itemPricing{
         font-size: 16px;
+    }
+
+    #delete-icon{
+        width: 100%;
+    }
+
+    .item-info{
+        width: 68%;
+        font-weight: normal;
+    }
+
+    .side-navdiv{
+        position: fixed;
+        z-index: 999999999;
+        top: 0;
+        width: 100%;
+        min-height: 100vh;
+        background-color: hsla(0, 0%, 0%, 75%);
+    }
+
+    .side-nav{
+        width: 70%;
+        min-height: 100vh;
+        background-color: hsl(0, 0%, 100%);
+    }
+
+    .side-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 280px;
+        padding-top: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+
+    .listitems li{
+        display: block;
+        padding: 10px 0px;
+        font-weight: 700;
+    }
+    
+    .listitems li a{
+        color:hsl(220, 13%, 13%);
+        transition: none;
+    }
+    
+    .listitems li a:hover{
+        color: hsl(220, 13%, 13%);
+    }
+    
+    .listitems li a:hover::after{
+        content: "";
+        width: 0;
+        height:0px;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        background-color: white;
     }
 
 

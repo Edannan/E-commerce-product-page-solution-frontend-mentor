@@ -8,6 +8,9 @@ var modalThumbnails = document.getElementsByClassName("thumbnail-modal");
 var currentImg = document.getElementsByClassName("activeModImg");
 var num = document.getElementById("num");
 var cartNumDiv = document.getElementById("cartNum");
+var sideMenu = document.getElementById("side-navdiv");
+
+
 
 
 //display cart
@@ -163,42 +166,93 @@ for (var i = 0; i < modalThumbnails.length; i++) {
     document.getElementById("cart-details").style.display = "none";
     document.getElementById("text").classList.remove("disabled");
   }
+
+  function openMenu(){
+    sideMenu.classList.remove("disabled");
+  }
+
+  //close side-menu
+  function closeMenu(){
+    sideMenu.classList.add("disabled");
+  }
   
   // responsiveness
-  if(window.innerWidth <= 799){
-    //disabling lightbox gallery on mobile
+      //next and previous buttons on mobile 
+      let mobileprev = document.getElementById("mobilePrev");
+      let mobilenext = document.getElementById("mobileNext");
+  
+      let imageArray = ['url("images/image-product-1.jpg")', 'url("images/image-product-2.jpg")', 'url("images/image-product-3.jpg")', 'url("images/image-product-4.jpg")'];
+      image.style.backgroundImage = imageArray[0];
+  
+      mobileprev.addEventListener("click", function(){
+        if(image.style.backgroundImage == imageArray[0]){
+          image.style.backgroundImage = imageArray[3];
+        }else if(image.style.backgroundImage == imageArray[3]){
+          image.style.backgroundImage = imageArray[2];
+        }else if(image.style.backgroundImage == imageArray[2]){
+          image.style.backgroundImage = imageArray[1];
+        }else{
+          image.style.backgroundImage = imageArray[0];
+        }
+      })
+  
+      mobilenext.addEventListener("click", function(){
+        if(image.style.backgroundImage == imageArray[3]){
+          image.style.backgroundImage = imageArray[0];
+        }else if(image.style.backgroundImage == imageArray[0]){
+          image.style.backgroundImage = imageArray[1];
+        }else if(image.style.backgroundImage == imageArray[1]){
+          image.style.backgroundImage = imageArray[2];
+        }else{
+          image.style.backgroundImage = imageArray[3];
+        }
+      })
+
+  function refixOnResize(){
+    var screenWidth = window.innerWidth;
+    let imageArray = ['url("images/image-product-1.jpg")', 'url("images/image-product-2.jpg")', 'url("images/image-product-3.jpg")', 'url("images/image-product-4.jpg")'];
+    if(screenWidth <= 799){
+       //disabling lightbox gallery on mobile
     image.removeAttribute("onclick");
 
-    //next and previous buttons on mobile 
-    let mobileprev = document.getElementById("mobilePrev");
-    let mobilenext = document.getElementById("mobileNext");
-
-    let imageArray = ['url("images/image-product-1.jpg")', 'url("images/image-product-2.jpg")', 'url("images/image-product-3.jpg")', 'url("images/image-product-4.jpg")'];
-    image.style.backgroundImage = imageArray[0];
-
-    mobileprev.addEventListener("click", function(){
-      if(image.style.backgroundImage == imageArray[0]){
-        image.style.backgroundImage = imageArray[3];
-      }else if(image.style.backgroundImage == imageArray[3]){
-        image.style.backgroundImage = imageArray[2];
-      }else if(image.style.backgroundImage == imageArray[2]){
-        image.style.backgroundImage = imageArray[1];
-      }else{
-        image.style.backgroundImage = imageArray[0];
-      }
-    })
-
-    mobilenext.addEventListener("click", function(){
-      if(image.style.backgroundImage == imageArray[3]){
-        image.style.backgroundImage = imageArray[0];
-      }else if(image.style.backgroundImage == imageArray[0]){
-        image.style.backgroundImage = imageArray[1];
-      }else if(image.style.backgroundImage == imageArray[1]){
-        image.style.backgroundImage = imageArray[2];
-      }else{
-        image.style.backgroundImage = imageArray[3];
-      }
-    })
+    //optional: slideshow (contains huge bugs)
+    // var myslideShow = setInterval(function(){
+    //   if(image.style.backgroundImage == imageArray[3]){
+    //     image.style.backgroundImage = imageArray[0];
+    //   }else if(image.style.backgroundImage == imageArray[0]){
+    //     image.style.backgroundImage = imageArray[1];
+    //   }else if(image.style.backgroundImage == imageArray[1]){
+    //     image.style.backgroundImage = imageArray[2];
+    //   }else{
+    //     image.style.backgroundImage = imageArray[3];
+    //   }
+    // }, 3000)
     
+    }else{
+      sideMenu.classList.add("disabled");
+      image.style.backgroundImage = imageArray[0];
+    }
+
+
 
   }
+
+  window.addEventListener("resize", refixOnResize)
+
+
+   
+
+    // setInterval(() => {
+    //   if (window.matchMedia("(min-width: 799px)").matches) {
+    //     sideMenu.classList.add("disabled");
+    //     // document.getElementById("sideMenu").classList.add("disabled");
+    //   } else {
+    //     // do something else
+    //   }
+    // }, 1000);
+
+
+
+    
+
+  
