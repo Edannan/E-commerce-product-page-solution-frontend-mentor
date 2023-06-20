@@ -49,8 +49,6 @@ Users should be able to:
 
 I learned how to use the "after" pseudo element in css and gained more knowledge in CSS and Javascript.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
 ### Continued development
 
 I will now focus on studying and creating more applications with React.
