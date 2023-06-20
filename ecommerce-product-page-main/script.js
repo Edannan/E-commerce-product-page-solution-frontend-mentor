@@ -243,8 +243,7 @@ for (var i = 0; i < modalThumbnails.length; i++) {
   window.addEventListener("resize", refixOnResize)
 
 
-   
-
+   //left it here for future ref
     // setInterval(() => {
     //   if (window.matchMedia("(min-width: 799px)").matches) {
     //     sideMenu.classList.add("disabled");
