@@ -210,6 +210,7 @@ for (var i = 0; i < modalThumbnails.length; i++) {
 
   function refixOnResize(){
     var screenWidth = window.innerWidth;
+    let image = document.getElementById("productImage");
     let imageArray = ['url("images/image-product-1.jpg")', 'url("images/image-product-2.jpg")', 'url("images/image-product-3.jpg")', 'url("images/image-product-4.jpg")'];
     if(screenWidth <= 799){
        //disabling lightbox gallery on mobile
@@ -231,6 +232,8 @@ for (var i = 0; i < modalThumbnails.length; i++) {
     }else{
       sideMenu.classList.add("disabled");
       image.style.backgroundImage = imageArray[0];
+      image.addEventListener("click", lightBoxGallery);
+      closeModal();
     }
 
 
