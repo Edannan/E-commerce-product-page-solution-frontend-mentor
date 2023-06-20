@@ -169,11 +169,17 @@ for (var i = 0; i < modalThumbnails.length; i++) {
 
   function openMenu(){
     sideMenu.classList.remove("disabled");
+    
+    //disable vertical scroll
+    document.body.style.overflowY = "hidden";
   }
 
   //close side-menu
   function closeMenu(){
     sideMenu.classList.add("disabled");
+
+    //enable vertical scroll
+    document.body.style.overflowY = "auto";
   }
   
   // responsiveness
@@ -230,7 +236,7 @@ for (var i = 0; i < modalThumbnails.length; i++) {
     // }, 3000)
     
     }else{
-      sideMenu.classList.add("disabled");
+      closeMenu();
       image.style.backgroundImage = imageArray[0];
       image.addEventListener("click", lightBoxGallery);
       closeModal();
