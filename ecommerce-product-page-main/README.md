@@ -51,7 +51,7 @@ I learned how to use the "after" pseudo element in css and gained more knowledge
 
 ### Continued development
 
-I will now focus on creating applications with React.
+I will now focus on studying more and creating applications with React.
 
 ### Useful resources
 
